@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "eventId": 1,
+    "name": "John Smith",
+    "email": "john.smith@company.com",
+    "phone": "+1 (555) 123-4567",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-06-05T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "eventId": 1,
+    "name": "Emma Johnson",
+    "email": "emma.johnson@company.com",
+    "phone": "+1 (555) 234-5678",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-06-05T10:15:00Z"
+  },
+  {
+    "Id": 3,
+    "eventId": 1,
+    "name": "Michael Davis",
+    "email": "michael.davis@company.com",
+    "phone": "+1 (555) 345-6789",
+    "rsvpStatus": "Pending",
+    "addedAt": "2024-06-06T14:30:00Z"
+  },
+  {
+    "Id": 4,
+    "eventId": 2,
+    "name": "Sarah Wilson",
+    "email": "sarah.wilson@techcorp.com",
+    "phone": "+1 (555) 456-7890",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-05-20T11:00:00Z"
+  },
+  {
+    "Id": 5,
+    "eventId": 2,
+    "name": "David Brown",
+    "email": "david.brown@innovation.com",
+    "phone": "+1 (555) 567-8901",
+    "rsvpStatus": "Declined",
+    "addedAt": "2024-05-22T16:45:00Z"
+  },
+  {
+    "Id": 6,
+    "eventId": 3,
+    "name": "Jennifer Miller",
+    "email": "jennifer.miller@email.com",
+    "phone": "+1 (555) 678-9012",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-02-01T13:20:00Z"
+  },
+  {
+    "Id": 7,
+    "eventId": 3,
+    "name": "Robert Taylor",
+    "email": "robert.taylor@email.com",
+    "phone": "+1 (555) 789-0123",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-02-03T09:15:00Z"
+  },
+  {
+    "Id": 8,
+    "eventId": 4,
+    "name": "Lisa Anderson",
+    "email": "lisa.anderson@company.com",
+    "phone": "+1 (555) 890-1234",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-06-16T08:00:00Z"
+  },
+  {
+    "Id": 9,
+    "eventId": 5,
+    "name": "Mark Thompson",
+    "email": "mark.thompson@email.com",
+    "phone": "+1 (555) 901-2345",
+    "rsvpStatus": "Pending",
+    "addedAt": "2024-07-02T15:30:00Z"
+  },
+  {
+    "Id": 10,
+    "eventId": 6,
+    "name": "Amanda White",
+    "email": "amanda.white@startup.com",
+    "phone": "+1 (555) 012-3456",
+    "rsvpStatus": "Accepted",
+    "addedAt": "2024-06-25T12:45:00Z"
+  }
+]
