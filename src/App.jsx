@@ -2,22 +2,22 @@ import React, { useState, useEffect, useRef } from "react";
 
 // Mock Data Services
 const mockUsers = [
-  { Id: 1, name: "Jean Martin", email: "jean@exemple.fr", password: "123", role: "driver", phone: "06 12 34 56 78", earnings: 245.50 },
+{ Id: 1, name: "Jean Martin", email: "jean@exemple.fr", password: "123", role: "driver", phone: "06 12 34 56 78", earnings: 161048 },
   { Id: 2, name: "Marie Dubois", email: "marie@exemple.fr", password: "123", role: "merchant", phone: "06 87 65 43 21", businessName: "Café de la Place" },
-  { Id: 3, name: "Pierre Moreau", email: "pierre@exemple.fr", password: "123", role: "driver", phone: "06 45 67 89 12", earnings: 189.25 },
+  { Id: 3, name: "Pierre Moreau", email: "pierre@exemple.fr", password: "123", role: "driver", phone: "06 45 67 89 12", earnings: 124204 },
   { Id: 4, name: "Sophie Laurent", email: "sophie@exemple.fr", password: "123", role: "merchant", phone: "06 23 45 67 89", businessName: "Boulangerie Laurent" },
   { Id: 5, name: "Alexandre Dupont", email: "client@exemple.fr", password: "123", role: "client", phone: "06 11 22 33 44", address: "15 Rue de la République, Paris" }
 ];
 
 const mockProducts = [
-  { Id: 1, merchantId: 2, name: "Café Expresso", category: "Boissons", price: 2.50, description: "Café italien authentique", image: "☕", available: true },
-  { Id: 2, merchantId: 2, name: "Croissant", category: "Viennoiseries", price: 1.80, description: "Croissant au beurre artisanal", image: "🥐", available: true },
-  { Id: 3, merchantId: 2, name: "Sandwich Jambon", category: "Sandwichs", price: 6.50, description: "Jambon de Bayonne, beurre, cornichons", image: "🥪", available: true },
-  { Id: 4, merchantId: 4, name: "Baguette Tradition", category: "Pains", price: 1.20, description: "Baguette tradition française", image: "🥖", available: true },
-  { Id: 5, merchantId: 4, name: "Pain au Chocolat", category: "Viennoiseries", price: 1.50, description: "Pâte feuilletée et chocolat", image: "🥐", available: true },
-  { Id: 6, merchantId: 4, name: "Éclair Café", category: "Pâtisseries", price: 3.20, description: "Éclair à la crème au café", image: "🧁", available: true },
-  { Id: 7, merchantId: 2, name: "Salade César", category: "Salades", price: 8.90, description: "Salade, poulet, parmesan, croûtons", image: "🥗", available: true },
-  { Id: 8, merchantId: 2, name: "Thé Vert", category: "Boissons", price: 2.20, description: "Thé vert bio", image: "🍵", available: true }
+{ Id: 1, merchantId: 2, name: "Café Expresso", category: "Boissons", price: 1640, description: "Café italien authentique", image: "☕", available: true },
+  { Id: 2, merchantId: 2, name: "Croissant", category: "Viennoiseries", price: 1181, description: "Croissant au beurre artisanal", image: "🥐", available: true },
+  { Id: 3, merchantId: 2, name: "Sandwich Jambon", category: "Sandwichs", price: 4264, description: "Jambon de Bayonne, beurre, cornichons", image: "🥪", available: true },
+  { Id: 4, merchantId: 4, name: "Baguette Tradition", category: "Pains", price: 787, description: "Baguette tradition française", image: "🥖", available: true },
+  { Id: 5, merchantId: 4, name: "Pain au Chocolat", category: "Viennoiseries", price: 984, description: "Pâte feuilletée et chocolat", image: "🥐", available: true },
+  { Id: 6, merchantId: 4, name: "Éclair Café", category: "Pâtisseries", price: 2099, description: "Éclair à la crème au café", image: "🧁", available: true },
+{ Id: 7, merchantId: 2, name: "Salade César", category: "Salades", price: 5838, description: "Salade, poulet, parmesan, croûtons", image: "🥗", available: true },
+  { Id: 8, merchantId: 2, name: "Thé Vert", category: "Boissons", price: 1443, description: "Thé vert bio", image: "🍵", available: true }
 ];
 
 const mockDeliveries = [
@@ -30,12 +30,12 @@ const mockDeliveries = [
     customerPhone: "+33123456789",
     address: "12 Rue de la Paix, Paris", 
     status: "delivered", 
-    amount: 25.50, 
+amount: 16728,
     createdAt: "2024-01-15T10:30:00Z",
     deliveredAt: "2024-01-15T11:15:00Z",
     items: [
-      { productId: 1, name: "Café Expresso", quantity: 2, price: 2.50 },
-      { productId: 3, name: "Sandwich Jambon", quantity: 1, price: 6.50 }
+{ productId: 1, name: "Café Expresso", quantity: 2, price: 1640 },
+      { productId: 3, name: "Sandwich Jambon", quantity: 1, price: 4264 }
     ]
   },
   { 
@@ -47,11 +47,11 @@ const mockDeliveries = [
     customerPhone: "+33234567890",
     address: "45 Avenue des Champs, Lyon", 
     status: "in_progress", 
-    amount: 18.75, 
+amount: 12300,
     createdAt: "2024-01-15T14:20:00Z",
     items: [
       { productId: 4, name: "Baguette Tradition", quantity: 3, price: 1.20 },
-      { productId: 6, name: "Éclair Café", quantity: 2, price: 3.20 }
+{ productId: 6, name: "Éclair Café", quantity: 2, price: 2099 }
     ]
   },
   { 
@@ -63,11 +63,11 @@ const mockDeliveries = [
     customerPhone: "+33345678901",
     address: "78 Boulevard Victor Hugo, Marseille", 
     status: "pending", 
-    amount: 32.25, 
+amount: 21156,
     createdAt: "2024-01-15T16:45:00Z",
     items: [
-      { productId: 7, name: "Salade César", quantity: 2, price: 8.90 },
-      { productId: 1, name: "Café Expresso", quantity: 4, price: 2.50 }
+{ productId: 7, name: "Salade César", quantity: 2, price: 5838 },
+      { productId: 1, name: "Café Expresso", quantity: 4, price: 1640 }
     ]
   }
 ];
@@ -922,7 +922,7 @@ const ClientDashboard = ({ user, onLogout }) => {
                           <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
                           <p className="text-sm text-gray-600 mb-2">{product.description}</p>
                           <div className="flex justify-between items-center mb-3">
-                            <span className="text-lg font-bold text-green-600">{product.price}€</span>
+<span className="text-lg font-bold text-green-600">{product.price} FCFA</span>
                             <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">
                               {product.category}
                             </span>
@@ -965,7 +965,7 @@ const ClientDashboard = ({ user, onLogout }) => {
                         <div>
                           <h4 className="font-semibold">{item.name}</h4>
                           <p className="text-sm text-gray-600">
-                            {item.merchantName} • {item.price}€ l'unité
+{item.merchantName} • {item.price} FCFA l'unité
                           </p>
                         </div>
                         <div className="flex items-center space-x-3">
@@ -983,7 +983,7 @@ const ClientDashboard = ({ user, onLogout }) => {
                             +
                           </button>
                           <span className="font-bold text-green-600 ml-4">
-                            {(item.price * item.quantity).toFixed(2)}€
+{(item.price * item.quantity)} FCFA
                           </span>
                           <button
                             onClick={() => removeFromCart(item.productId)}
@@ -998,7 +998,7 @@ const ClientDashboard = ({ user, onLogout }) => {
                     <div className="border-t pt-4">
                       <div className="flex justify-between items-center text-xl font-bold">
                         <span>Total:</span>
-                        <span className="text-green-600">{getCartTotal().toFixed(2)}€</span>
+<span className="text-green-600">{getCartTotal()} FCFA</span>
                       </div>
                       <button
                         onClick={() => setShowCheckout(true)}
@@ -1038,7 +1038,7 @@ const ClientDashboard = ({ user, onLogout }) => {
                               <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(order.status)}`}>
                                 {getStatusLabel(order.status)}
                               </span>
-                              <p className="font-bold text-green-600 mt-2">{order.amount}€</p>
+<p className="font-bold text-green-600 mt-2">{order.amount} FCFA</p>
                             </div>
                           </div>
                           
@@ -1218,7 +1218,7 @@ const CheckoutModal = ({ cart, total, user, onClose, onSubmit }) => {
             <div className="border-t pt-2 font-semibold">
               <div className="flex justify-between">
                 <span>Total:</span>
-                <span>{total.toFixed(2)}€</span>
+<span>{total} FCFA</span>
               </div>
             </div>
           </div>
@@ -1534,7 +1534,7 @@ const DriverDashboard = ({ user, onLogout }) => {
               />
               <div className="text-right">
                 <p className="text-sm text-gray-500">Gains totaux</p>
-                <p className="text-xl font-bold text-green-600">{user.earnings}€</p>
+<p className="text-xl font-bold text-green-600">{user.earnings} FCFA</p>
               </div>
               <button
                 onClick={onLogout}
@@ -1575,7 +1575,7 @@ const DriverDashboard = ({ user, onLogout }) => {
                         
                         <div className="mb-4">
                           <p className="text-sm text-gray-600 mb-1">📍 {delivery.address}</p>
-                          <p className="font-semibold text-green-600">{delivery.amount}€</p>
+<p className="font-semibold text-green-600">{delivery.amount} FCFA</p>
                           {delivery.items && (
                             <p className="text-sm text-gray-500 mt-1">
                               {delivery.items.length} article(s)
@@ -1615,7 +1615,7 @@ const DriverDashboard = ({ user, onLogout }) => {
                     
                     <div className="mb-4">
                       <p className="text-sm text-gray-600 mb-1">📍 {delivery.address}</p>
-                      <p className="font-semibold text-green-600">{delivery.amount}€</p>
+<p className="font-semibold text-green-600">{delivery.amount} FCFA</p>
                       {delivery.items && (
                         <div className="text-sm text-gray-500 mt-2">
                           <strong>Articles:</strong> {delivery.items.map(item => `${item.name} x${item.quantity}`).join(', ')}
@@ -1683,7 +1683,7 @@ const DriverDashboard = ({ user, onLogout }) => {
               <hr />
               <div className="flex justify-between text-lg">
                 <span>Gains totaux</span>
-                <span className="font-bold text-green-600">{user.earnings}€</span>
+<span className="font-bold text-green-600">{user.earnings} FCFA</span>
               </div>
             </div>
           </div>
@@ -1911,7 +1911,7 @@ const MerchantDashboard = ({ user, onLogout }) => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Chiffre d'Affaires</p>
-                <p className="text-2xl font-bold text-green-600">{totalRevenue.toFixed(2)}€</p>
+<p className="text-2xl font-bold text-green-600">{totalRevenue} FCFA</p>
               </div>
               <div className="text-green-600">💰</div>
             </div>
@@ -1920,7 +1920,7 @@ const MerchantDashboard = ({ user, onLogout }) => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Panier Moyen</p>
-                <p className="text-2xl font-bold text-blue-600">{avgOrderValue.toFixed(2)}€</p>
+<p className="text-2xl font-bold text-blue-600">{avgOrderValue} FCFA</p>
               </div>
               <div className="text-blue-600">🛍️</div>
             </div>
@@ -2054,7 +2054,7 @@ const MerchantDashboard = ({ user, onLogout }) => {
                         
                         <div className="mb-4">
                           <p className="text-sm text-gray-600 mb-1">📍 {delivery.address}</p>
-                          <p className="font-semibold text-green-600">{delivery.amount}€</p>
+<p className="font-semibold text-green-600">{delivery.amount} FCFA</p>
                           {delivery.notes && <p className="text-sm text-gray-500 mt-1">{delivery.notes}</p>}
                         </div>
 
@@ -2142,7 +2142,7 @@ const MerchantDashboard = ({ user, onLogout }) => {
                         <p className="text-sm text-gray-600">{product.description}</p>
                       </div>
                       <div className="flex justify-between items-center mb-3">
-                        <span className="font-bold text-green-600">{product.price}€</span>
+<span className="font-bold text-green-600">{product.price} FCFA</span>
                         <span className="text-xs bg-gray-100 px-2 py-1 rounded">{product.category}</span>
                       </div>
                       <div className="flex justify-between items-center">
@@ -2185,7 +2185,7 @@ const MerchantDashboard = ({ user, onLogout }) => {
                         </div>
                         <div className="text-right">
                           <p className="font-semibold">{customer.totalOrders} commandes</p>
-                          <p className="text-green-600 font-semibold">{customer.totalSpent.toFixed(2)}€</p>
+<p className="text-green-600 font-semibold">{customer.totalSpent} FCFA</p>
                           <p className="text-sm text-gray-500">
                             Dernière commande: {new Date(customer.lastOrderDate).toLocaleDateString()}
                           </p>
@@ -2538,7 +2538,7 @@ const EditDeliveryModal = ({ delivery, onClose, onSubmit }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Montant (€)</label>
+<label className="block text-sm font-medium text-gray-700 mb-1">Montant (FCFA)</label>
             <input
               type="number"
               step="0.01"
@@ -2848,22 +2848,22 @@ const ReportsModal = ({ deliveries, customers, onClose }) => {
               <p className="text-sm text-gray-600">Panier moyen</p>
               <p className="text-xl font-bold text-blue-600">
                 {deliveries.length > 0 ? 
-                  (deliveries.reduce((sum, d) => sum + d.amount, 0) / deliveries.length).toFixed(2) : 0
-                }€
+Math.round(deliveries.reduce((sum, d) => sum + d.amount, 0) / deliveries.length) : 0
+                } FCFA
               </p>
             </div>
             <div>
               <p className="text-sm text-gray-600">CA Total</p>
               <p className="text-xl font-bold text-purple-600">
-                {deliveries.reduce((sum, d) => sum + d.amount, 0).toFixed(2)}€
+{deliveries.reduce((sum, d) => sum + d.amount, 0)} FCFA
               </p>
             </div>
             <div>
               <p className="text-sm text-gray-600">Meilleur client</p>
               <p className="text-xl font-bold text-orange-600">
                 {customers.length > 0 ? 
-                  customers.reduce((prev, current) => prev.totalSpent > current.totalSpent ? prev : current).totalSpent.toFixed(2) : 0
-                }€
+customers.reduce((prev, current) => prev.totalSpent > current.totalSpent ? prev : current).totalSpent : 0
+                } FCFA
               </p>
             </div>
           </div>
