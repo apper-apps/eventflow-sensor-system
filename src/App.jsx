@@ -7,6 +7,7 @@ import EventsList from "@/components/pages/EventsList";
 import EventDetail from "@/components/pages/EventDetail";
 import CreateEvent from "@/components/pages/CreateEvent";
 import CalendarView from "@/components/pages/CalendarView";
+import VisitorsPage from "@/components/pages/VisitorsPage";
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
         <Header />
         
         <main className="min-h-[calc(100vh-4rem)]">
-          <Routes>
+<Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/events" element={<EventsList />} />
             <Route path="/events/create" element={<CreateEvent />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/calendar" element={<CalendarView />} />
+            <Route path="/visitors" element={<VisitorsPage />} />
           </Routes>
         </main>
 

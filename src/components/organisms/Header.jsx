@@ -8,9 +8,10 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", label: "Dashboard", icon: "LayoutDashboard" },
+{ path: "/", label: "Dashboard", icon: "LayoutDashboard" },
     { path: "/events", label: "My Events", icon: "Calendar" },
-    { path: "/calendar", label: "Calendar", icon: "CalendarDays" }
+    { path: "/calendar", label: "Calendar", icon: "CalendarDays" },
+    { path: "/visitors", label: "Visitors", icon: "Users" }
   ];
 
   const isActivePath = (path) => {
